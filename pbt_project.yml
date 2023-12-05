@@ -22,10 +22,109 @@ functions:
   expressions: {}
   airflowFunctions: {}
 subgraphs: {}
-sqlModels: {}
+sqlModels:
+  .prophecy/metadata/sqlmodels/demo_model:
+    name: demo_model
+    schema:
+      providerType: Databricks
+      fields:
+      - name: o_totalprice
+        dataType:
+          type: Decimal
+      - name: o_orderdate
+        dataType:
+          type: Date
+      - name: o_orderkey
+        dataType:
+          type: Bigint
+      - name: c_name
+        dataType:
+          type: String
+    description: null
+    author: poojas+demo@prophecy.io
+    files:
+    - models/demo_model.sql
+    - .prophecy/ide/models/demo_model.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-12-05 10:22:09'
 sqlMacros: {}
 sqlSeeds: {}
-sqlSources: {}
+sqlSources:
+  .prophecy/metadata/sqlsources/samples_tpch:
+    name: samples.tpch
+    description: null
+    author: poojas+demo@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2023-12-05 10:17:34'
+    tables:
+    - name: customer
+      schema:
+        providerType: databricks
+        fields:
+        - name: c_custkey
+          dataType:
+            type: Bigint
+        - name: c_name
+          dataType:
+            type: String
+        - name: c_address
+          dataType:
+            type: String
+        - name: c_nationkey
+          dataType:
+            type: Bigint
+        - name: c_phone
+          dataType:
+            type: String
+        - name: c_acctbal
+          dataType:
+            type: Decimal
+        - name: c_mktsegment
+          dataType:
+            type: String
+        - name: c_comment
+          dataType:
+            type: String
+      description: null
+      author: poojas+demo@prophecy.io
+      createdAt: '2023-12-05 10:17:34'
+    - name: orders
+      schema:
+        providerType: databricks
+        fields:
+        - name: o_orderkey
+          dataType:
+            type: Bigint
+        - name: o_custkey
+          dataType:
+            type: Bigint
+        - name: o_orderstatus
+          dataType:
+            type: String
+        - name: o_totalprice
+          dataType:
+            type: Decimal
+        - name: o_orderdate
+          dataType:
+            type: Date
+        - name: o_orderpriority
+          dataType:
+            type: String
+        - name: o_clerk
+          dataType:
+            type: String
+        - name: o_shippriority
+          dataType:
+            type: Integer
+        - name: o_comment
+          dataType:
+            type: String
+      description: null
+      author: poojas+demo@prophecy.io
+      createdAt: '2023-12-05 10:17:38'
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline
