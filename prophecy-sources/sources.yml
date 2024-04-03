@@ -62,3 +62,55 @@ sources:
     - name: "o_comment"
       dataType:
         type: "String"
+- name: "main.default"
+  database: "main"
+  schema: "default"
+  config:
+    enabled: true
+  tables:
+  - name: "prophecy_sample_customers_demo"
+    columns:
+    - name: "customer_id"
+      dataType:
+        type: "String"
+    - name: "first_name"
+      dataType:
+        type: "String"
+    - name: "last_name"
+      dataType:
+        type: "String"
+    - name: "phone"
+      dataType:
+        type: "String"
+    - name: "email"
+      dataType:
+        type: "String"
+    - name: "country_code"
+      dataType:
+        type: "String"
+    - name: "account_open_date"
+      dataType:
+        type: "String"
+    - name: "account_flags"
+      dataType:
+        type: "String"
+  - name: "prophecy_sample_orders_demo"
+    columns:
+    - name: "order_id"
+      dataType:
+        type: "String"
+    - name: "customer_id"
+      dataType:
+        type: "String"
+    - name: "order_status"
+      dataType:
+        type: "String"
+    - name: "order_category"
+      dataType:
+        type: "String"
+    - name: "order_date"
+      dataType:
+        type: "String"
+    - name: "amount"
+      dataType:
+        type: "String"

@@ -23,6 +23,35 @@ functions:
   airflowFunctions: {}
 subgraphs: {}
 sqlModels:
+  .prophecy/metadata/sqlmodels/customer_orders:
+    name: customer_orders
+    schema:
+      providerType: Databricks
+      fields:
+      - name: total_orders
+        dataType:
+          type: Bigint
+      - name: total_amount_rounded
+        dataType:
+          type: Double
+      - name: customer_id
+        dataType:
+          type: String
+      - name: email
+        dataType:
+          type: String
+      - name: full_name
+        dataType:
+          type: String
+    description: null
+    author: poojas+demo@prophecy.io
+    files:
+    - models/customer_orders.sql
+    - .prophecy/ide/models/customer_orders.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:14:43'
   .prophecy/metadata/sqlmodels/demo_model:
     name: demo_model
     schema:
@@ -52,6 +81,70 @@ sqlModels:
 sqlMacros: {}
 sqlSeeds: {}
 sqlSources:
+  .prophecy/metadata/sqlsources/main_default:
+    name: main.default
+    description: null
+    author: poojas+demo@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2024-04-03 16:17:36'
+    tables:
+    - name: prophecy_sample_customers_demo
+      schema:
+        providerType: databricks
+        fields:
+        - name: customer_id
+          dataType:
+            type: String
+        - name: first_name
+          dataType:
+            type: String
+        - name: last_name
+          dataType:
+            type: String
+        - name: phone
+          dataType:
+            type: String
+        - name: email
+          dataType:
+            type: String
+        - name: country_code
+          dataType:
+            type: String
+        - name: account_open_date
+          dataType:
+            type: String
+        - name: account_flags
+          dataType:
+            type: String
+      description: null
+      author: poojas+demo@prophecy.io
+      createdAt: '2024-04-03 16:17:36'
+    - name: prophecy_sample_orders_demo
+      schema:
+        providerType: databricks
+        fields:
+        - name: order_id
+          dataType:
+            type: String
+        - name: customer_id
+          dataType:
+            type: String
+        - name: order_status
+          dataType:
+            type: String
+        - name: order_category
+          dataType:
+            type: String
+        - name: order_date
+          dataType:
+            type: String
+        - name: amount
+          dataType:
+            type: String
+      description: null
+      author: poojas+demo@prophecy.io
+      createdAt: '2024-04-03 16:17:40'
   .prophecy/metadata/sqlsources/samples_tpch:
     name: samples.tpch
     description: null
@@ -133,4 +226,6 @@ sqlPipeline:
   createdAt: '2023-12-05 10:13:59'
 dependencies: '[]'
 projectDependencies: {}
+flags:
+  shouldAddDefaultDependenciesIfAbsent: true
 pipelineConfigurations: {}
