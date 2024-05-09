@@ -1,6 +1,6 @@
 name: databricks_sql
 description: ''
-version: 0.0.1
+version: '1.0'
 author: poojas@prophecy.io
 language: sql
 buildSystem: ''
