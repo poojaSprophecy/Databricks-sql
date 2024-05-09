@@ -1,0 +1,620 @@
+{
+  "id" : "test",
+  "metainfo" : {
+    "label" : "test",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "VZuIEEPpNYticaHarVbYp" : {
+      "id" : "VZuIEEPpNYticaHarVbYp",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "orders",
+        "slug" : "orders",
+        "x" : -580,
+        "y" : -120,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "orders",
+          "sourceType" : "Source",
+          "sourceName" : "samples.tpch",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "iZcB7jqRMjfYtu7PwdqSu",
+          "schema" : {
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "o_orderkey",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "o_custkey",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "o_orderstatus",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "o_totalprice",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "o_orderdate",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "o_orderpriority",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "o_clerk",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "o_shippriority",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "o_comment",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "3fIfVaDIz8bh2NnQY3zU2$$WhKPt83rGcqvgaBsyqufZ" : {
+      "id" : "3fIfVaDIz8bh2NnQY3zU2$$WhKPt83rGcqvgaBsyqufZ",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "customer_order_details",
+        "slug" : "customer_order_details",
+        "x" : -400,
+        "y" : -220,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "expression" : "in0.c_custkey = in1.o_custkey"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "in0.c_custkey"
+          },
+          "alias" : "c_custkey"
+        }, {
+          "expression" : {
+            "expression" : "in0.c_name"
+          },
+          "alias" : "name"
+        }, {
+          "expression" : {
+            "expression" : "in0.c_address"
+          },
+          "alias" : "address"
+        }, {
+          "expression" : {
+            "expression" : "in1.o_orderkey"
+          },
+          "alias" : "orderkey"
+        }, {
+          "expression" : {
+            "expression" : "in1.o_orderstatus"
+          },
+          "alias" : "orderstatus"
+        }, {
+          "expression" : {
+            "expression" : "in1.o_totalprice"
+          },
+          "alias" : "totalprice"
+        }, {
+          "expression" : {
+            "expression" : "in1.o_orderdate"
+          },
+          "alias" : "orderdate"
+        } ],
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "EgFa6mFdPsiOmPA5p9NyD$$fjuqh6mNbAqvOuyWjaUOQ##c_custkey", "H7qCcRqJPUZb7hDlnZJIe$$64LOXajpOUttrgrxSChOE##o_custkey", "EgFa6mFdPsiOmPA5p9NyD$$fjuqh6mNbAqvOuyWjaUOQ##c_custkey", "EgFa6mFdPsiOmPA5p9NyD$$fjuqh6mNbAqvOuyWjaUOQ##c_name", "EgFa6mFdPsiOmPA5p9NyD$$fjuqh6mNbAqvOuyWjaUOQ##c_address", "H7qCcRqJPUZb7hDlnZJIe$$64LOXajpOUttrgrxSChOE##o_orderkey", "H7qCcRqJPUZb7hDlnZJIe$$64LOXajpOUttrgrxSChOE##o_orderstatus", "H7qCcRqJPUZb7hDlnZJIe$$64LOXajpOUttrgrxSChOE##o_totalprice", "H7qCcRqJPUZb7hDlnZJIe$$64LOXajpOUttrgrxSChOE##o_orderdate" ],
+        "headAlias" : "in0"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "EgFa6mFdPsiOmPA5p9NyD$$fjuqh6mNbAqvOuyWjaUOQ",
+          "schema" : {
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "c_custkey",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "c_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_address",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_nationkey",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "c_phone",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_acctbal",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "c_mktsegment",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_comment",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        }, {
+          "id" : "H7qCcRqJPUZb7hDlnZJIe$$64LOXajpOUttrgrxSChOE",
+          "schema" : {
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "o_orderkey",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "o_custkey",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "o_orderstatus",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "o_totalprice",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "o_orderdate",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "o_orderpriority",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "o_clerk",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "o_shippriority",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "o_comment",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "bvcQtrKCh44lio4esyF5e$$_4AEGJjDoPPp4wZbs_kAM",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "c_custkey",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "address",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "orderkey",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "orderstatus",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "totalprice",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "orderdate",
+              "dataType" : {
+                "type" : "Date"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "d5-3wfv3k-Jf4Vlo-JVFM$$xPUh_e4rfK3L-2ob68c8v" : {
+      "id" : "d5-3wfv3k-Jf4Vlo-JVFM$$xPUh_e4rfK3L-2ob68c8v",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "customer_summary",
+        "slug" : "customer_summary",
+        "x" : -240,
+        "y" : -220,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "any_value(name)"
+          },
+          "alias" : "name"
+        }, {
+          "expression" : {
+            "expression" : "any_value(address)"
+          },
+          "alias" : "address"
+        }, {
+          "expression" : {
+            "expression" : "COUNT(orderkey)"
+          },
+          "alias" : "total_orders"
+        }, {
+          "expression" : {
+            "expression" : "SUM(totalprice)"
+          },
+          "alias" : "total_price"
+        }, {
+          "expression" : {
+            "expression" : "DATEDIFF(CURRENT_DATE(),MAX(orderdate))    "
+          },
+          "alias" : "days_since_last_order"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ "mNaB48Z-7dZtppub97fBe$$9iLRNIr1gU1uvOVdL73Gg##c_custkey", "mNaB48Z-7dZtppub97fBe$$9iLRNIr1gU1uvOVdL73Gg##name", "mNaB48Z-7dZtppub97fBe$$9iLRNIr1gU1uvOVdL73Gg##address", "mNaB48Z-7dZtppub97fBe$$9iLRNIr1gU1uvOVdL73Gg##orderkey", "mNaB48Z-7dZtppub97fBe$$9iLRNIr1gU1uvOVdL73Gg##totalprice", "mNaB48Z-7dZtppub97fBe$$9iLRNIr1gU1uvOVdL73Gg##orderdate" ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "c_custkey"
+          }
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "mNaB48Z-7dZtppub97fBe$$9iLRNIr1gU1uvOVdL73Gg",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "c_custkey",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "address",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "orderkey",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "orderstatus",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "totalprice",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "orderdate",
+              "dataType" : {
+                "type" : "Date"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "0DqBLuS4bAEOemrQGktFL$$Djv-ZJ6NLy47g4MXhlotl",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "address",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "total_orders",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "total_price",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "days_since_last_order",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "BiRQ-AxsBV8juH4VPm2QR" : {
+      "id" : "BiRQ-AxsBV8juH4VPm2QR",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "customer",
+        "slug" : "customer",
+        "x" : -580,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "customer",
+          "sourceType" : "Source",
+          "sourceName" : "samples.tpch",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Pu4slwAaNLx1UBb767OnT",
+          "schema" : {
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "c_custkey",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "c_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_address",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_nationkey",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "c_phone",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_acctbal",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "c_mktsegment",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_comment",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "test##LzpLneub" : {
+      "id" : "test##LzpLneub",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "test",
+        "x" : -80,
+        "y" : -220,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM customer_summary\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "zw3ek664",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "address",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "total_orders",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "total_price",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "days_since_last_order",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "customer_summary"
+        } ],
+        "outputs" : [ {
+          "id" : "c1hFNBsa",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "address",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "total_orders",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "total_price",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "days_since_last_order",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "NANofM9JY8xHFSLn_9EBJ$$vzNI736ohYmsgpvO8bkH4",
+    "source" : "VZuIEEPpNYticaHarVbYp",
+    "sourcePort" : "iZcB7jqRMjfYtu7PwdqSu",
+    "target" : "3fIfVaDIz8bh2NnQY3zU2$$WhKPt83rGcqvgaBsyqufZ",
+    "targetPort" : "H7qCcRqJPUZb7hDlnZJIe$$64LOXajpOUttrgrxSChOE"
+  }, {
+    "id" : "yMdlXhn2DjKOAHMelHFEb$$c1QQNyxNRcBERSqZusWu5",
+    "source" : "BiRQ-AxsBV8juH4VPm2QR",
+    "sourcePort" : "Pu4slwAaNLx1UBb767OnT",
+    "target" : "3fIfVaDIz8bh2NnQY3zU2$$WhKPt83rGcqvgaBsyqufZ",
+    "targetPort" : "EgFa6mFdPsiOmPA5p9NyD$$fjuqh6mNbAqvOuyWjaUOQ"
+  }, {
+    "id" : "GfIl_XMeKaHvfXgLps3Oh$$IfGr6A_trD2BMVVCkySlD",
+    "source" : "3fIfVaDIz8bh2NnQY3zU2$$WhKPt83rGcqvgaBsyqufZ",
+    "sourcePort" : "bvcQtrKCh44lio4esyF5e$$_4AEGJjDoPPp4wZbs_kAM",
+    "target" : "d5-3wfv3k-Jf4Vlo-JVFM$$xPUh_e4rfK3L-2ob68c8v",
+    "targetPort" : "mNaB48Z-7dZtppub97fBe$$9iLRNIr1gU1uvOVdL73Gg"
+  }, {
+    "id" : "sZKEL1N_fYpavGn_vvmqC$$tXUS0GoYZO33sGjOOAbdS",
+    "source" : "d5-3wfv3k-Jf4Vlo-JVFM$$xPUh_e4rfK3L-2ob68c8v",
+    "sourcePort" : "0DqBLuS4bAEOemrQGktFL$$Djv-ZJ6NLy47g4MXhlotl",
+    "target" : "test##LzpLneub",
+    "targetPort" : "zw3ek664"
+  } ],
+  "component" : "Model"
+}

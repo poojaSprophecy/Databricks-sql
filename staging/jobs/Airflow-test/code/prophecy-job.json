@@ -1,0 +1,152 @@
+{
+  "metainfo" : {
+    "type" : "Prophecy",
+    "fabricId" : "2783",
+    "jobId" : "jobs/Airflow-test",
+    "name" : "Airflow-test",
+    "dagName" : "M4o4Uzu7RxUTMoh4isBLqw_",
+    "schedule" : "0 0/1 * * *",
+    "enabled" : false,
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "ignore_first_depends_on_past" : true,
+      "pool" : "E0oymhcy",
+      "do_xcom_push" : true
+    },
+    "availableFabrics" : [ {
+      "id" : "928",
+      "name" : "Airflow-composer"
+    }, {
+      "id" : "2459",
+      "name" : "airflow-os",
+      "artifactsLocation" : "/mnt/airflow/artifacts"
+    }, {
+      "id" : "2461",
+      "name" : "demo"
+    }, {
+      "id" : "2508",
+      "name" : "mwaa-access-key-demo"
+    }, {
+      "id" : "2783",
+      "name" : "PM-airflow",
+      "trialStartDate" : 1715240275612
+    } ],
+    "maxActiveRuns" : 1,
+    "endDate" : "2024-05-30",
+    "catchup" : false,
+    "scheduleTimeZone" : "UTC",
+    "dagParams" : {
+      "instances" : {
+        "default" : { }
+      },
+      "params" : { },
+      "selected" : "default"
+    },
+    "airflowFunctions" : [ ],
+    "dynamicPipelineStatus" : {
+      "databricks" : false,
+      "dataproc" : false,
+      "emr" : false,
+      "onprem" : false
+    }
+  },
+  "processes" : {
+    "KkIypRHUuGDRCKghkqo6q$$d3Qj2Tr32ZPsVb7ePjAj3" : {
+      "id" : "KkIypRHUuGDRCKghkqo6q$$d3Qj2Tr32ZPsVb7ePjAj3",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "Model_0",
+        "slug" : "Model_0",
+        "x" : -260,
+        "y" : -20
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "HXhmyEKEiwRer9IG9r1hG$$Efn-hD0jkDs4bZbeu1jgJ",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "a4_nhrJLHj-kQ793Z-yb2$$j00bb0LJkJW5B9LiJdxEd",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "cacheSelectedOnly" : null,
+        "gitSubPath" : null,
+        "runModelWithParents" : false,
+        "defer" : null,
+        "noDefer" : null,
+        "runSeed" : false,
+        "gitEntity" : "branch",
+        "noPartialParse" : null,
+        "model" : null,
+        "warnErrorOptions" : null,
+        "gitTokenSecret" : null,
+        "state" : null,
+        "useExperimentalParser" : null,
+        "currentProjectSnapshots" : null,
+        "gitSshUrl" : null,
+        "indirectSelection" : null,
+        "partialParse" : null,
+        "runRun" : true,
+        "vars" : null,
+        "runSnapshots" : false,
+        "noPrint" : null,
+        "quiet" : null,
+        "projectId" : "11791",
+        "runMode" : "project",
+        "runOnlyModel" : false,
+        "favorState" : null,
+        "failFast" : null,
+        "noStaticParser" : null,
+        "loadingModels" : false,
+        "runTest" : true,
+        "select" : null,
+        "recordTimingInfo" : null,
+        "fullRefresh" : null,
+        "noCacheSelectedOnly" : null,
+        "noFavorState" : null,
+        "snapshot" : null,
+        "isProphecyManaged" : false,
+        "profile" : null,
+        "noVersionCheck" : null,
+        "noWriteJson" : false,
+        "printerWidth" : null,
+        "sqlFabricId" : "955",
+        "gitEntityValue" : "dev",
+        "logFormat" : null,
+        "runModelWithChildren" : false,
+        "dbtProfileSecret" : null,
+        "target" : null,
+        "exclude" : null,
+        "runDeps" : false,
+        "loadingSnapshots" : false,
+        "noAnonymousUsageStats" : null,
+        "selector" : null,
+        "targetPath" : null,
+        "threads" : null,
+        "warnError" : null,
+        "currentProjectModels" : [ {
+          "label" : "test",
+          "value" : "test",
+          "id" : "11791/.prophecy/metadata/sqlmodels/test",
+          "name" : "test"
+        } ],
+        "profilesDir" : null,
+        "taskId" : null,
+        "logPath" : null,
+        "storeFailures" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    }
+  },
+  "connections" : [ ]
+}

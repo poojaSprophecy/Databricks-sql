@@ -1,0 +1,169 @@
+name: databricks_sql
+description: ''
+version: 0.0.1
+author: poojas@prophecy.io
+language: sql
+buildSystem: ''
+buildSystemDetails: null
+pipelines: {}
+datasets: {}
+templates: {}
+jobs:
+  jobs/Airflow-test:
+    name: Airflow-test
+    description: ''
+    fabricUID: 2783
+    scheduler:
+      Prophecy: {}
+    cloudProvider: null
+    jobSize: null
+    scheduleCron: 0 0/1 * * *
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines: []
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2024-05-09 07:55:10'
+    author: poojas@prophecy.io
+gemContainer:
+  languageVersion: ''
+  gemLibsVersion: ''
+  gems: {}
+  dependencies: null
+functions:
+  author: null
+  createdAt: '2024-05-09 07:39:49'
+  udfs: {}
+  udafs: {}
+  expressions: {}
+  airflowFunctions: {}
+subgraphs: {}
+sqlModels:
+  .prophecy/metadata/sqlmodels/test:
+    name: test
+    schema:
+      providerType: Databricks
+      fields:
+      - name: name
+        dataType:
+          type: String
+      - name: address
+        dataType:
+          type: String
+      - name: total_orders
+        dataType:
+          type: Bigint
+      - name: total_price
+        dataType:
+          type: Decimal
+      - name: days_since_last_order
+        dataType:
+          type: Integer
+    description: null
+    author: poojas@prophecy.io
+    files:
+    - models/test.sql
+    - .prophecy/ide/models/test.json
+    sqlDependencies:
+      models: []
+      datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
+    createdAt: '2024-05-09 07:41:31'
+sqlSnapshots: {}
+sqlTests: {}
+sqlMacros: {}
+sqlSeeds: {}
+sqlSources:
+  .prophecy/metadata/sqlsources/samples_tpch:
+    name: samples.tpch
+    description: null
+    author: poojas@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2024-05-09 07:42:00'
+    tables:
+    - name: customer
+      schema:
+        providerType: databricks
+        fields:
+        - name: c_custkey
+          dataType:
+            type: Bigint
+        - name: c_name
+          dataType:
+            type: String
+        - name: c_address
+          dataType:
+            type: String
+        - name: c_nationkey
+          dataType:
+            type: Bigint
+        - name: c_phone
+          dataType:
+            type: String
+        - name: c_acctbal
+          dataType:
+            type: Decimal
+        - name: c_mktsegment
+          dataType:
+            type: String
+        - name: c_comment
+          dataType:
+            type: String
+      description: null
+      author: poojas@prophecy.io
+      createdAt: '2024-05-09 07:42:00'
+    - name: orders
+      schema:
+        providerType: databricks
+        fields:
+        - name: o_orderkey
+          dataType:
+            type: Bigint
+        - name: o_custkey
+          dataType:
+            type: Bigint
+        - name: o_orderstatus
+          dataType:
+            type: String
+        - name: o_totalprice
+          dataType:
+            type: Decimal
+        - name: o_orderdate
+          dataType:
+            type: Date
+        - name: o_orderpriority
+          dataType:
+            type: String
+        - name: o_clerk
+          dataType:
+            type: String
+        - name: o_shippriority
+          dataType:
+            type: Integer
+        - name: o_comment
+          dataType:
+            type: String
+      description: null
+      author: poojas@prophecy.io
+      createdAt: '2024-05-09 07:42:02'
+sqlUnreferencedSources: {}
+sqlPipeline:
+  name: sqlPipeline
+  description: null
+  author: poojas@prophecy.io
+  createdAt: '2024-05-09 07:39:49'
+dependencies: []
+projectDependencies: {}
+flags:
+  shouldAddDefaultDependenciesIfAbsent: true
+pipelineConfigurations: {}
